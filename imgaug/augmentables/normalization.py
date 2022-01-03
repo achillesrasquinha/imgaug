@@ -646,11 +646,11 @@ def invert_normalize_segmentation_maps(segmentation_maps,
             [segmap_i.get_arr() for segmap_i in segmentation_maps],
             input_dtype)
     if ntype == "SegmentationMapsOnImage":
-        assert len(segmentation_maps) == 1, (
-            "Expected as many segmentation maps after normalization as before "
-            "normalization. Got %d (after) and %d (before)." % (
-                len(segmentation_maps), 1))
-        return segmentation_maps[0]
+        # assert len(segmentation_maps) == 1, (
+        #     "Expected as many segmentation maps after normalization as before "
+        #     "normalization. Got %d (after) and %d (before)." % (
+        #         len(segmentation_maps), 1))
+        return segmentation_maps
     if ntype == "iterable[empty]":
         assert segmentation_maps is None, (
             "Expected segmentation maps after normalization to be None, due "
